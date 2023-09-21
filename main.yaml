@@ -1,0 +1,10 @@
+---
+- name: create user account
+  hosts: centos
+  tasks:
+    - name: create user
+      user:
+        name: "{{ user }}"
+        state: absent
+      when: inventory_hostname == "node1"
+...
