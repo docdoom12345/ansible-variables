@@ -1,0 +1,5 @@
+[centos]
+node[1:2]
+
+[linux:children]
+centos

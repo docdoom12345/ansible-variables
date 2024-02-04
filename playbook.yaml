@@ -1,0 +1,12 @@
+---
+- name: Use variables in playbook
+  hosts: centos
+  vars:
+    os_packages:
+      - git
+      - java-17-openjdk
+  tasks:
+    - name: Install packages
+      ansible.builtin.dnf:
+        name: "{{ os_packages }}"
+        state: present
